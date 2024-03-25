@@ -1,0 +1,34 @@
+-Summary of approach:
+This program is taking all of the names in advertisers.txt and processing them to find potential duplicates.
+The advertisers will be processed and stored in an array in the advertisers object, with a key that denotes a unique portion of the name.
+
+For example: 
+const advertisers = {
+  '1800flowerscom': [ '1-800-Flowers.com', '1800Flowers.com' ],
+  'penske': [ 'Penske', 'Penske System, Inc' ],
+  'john_hancock': [ 'John Hancock', 'John Hancock Center' ]
+}
+
+
+-To run sensor.js:
+Must run on a linux/unix environment where grep, wc, and /usr/share/dict/words exists.
+
+
+-A few thoughts:
+If I had more time, I would expand the dictionary of common proper nouns to be able to further classify whether an advertiser's name is unique.
+For brevity, I've only added eight names, but more can be added to refine the output.
+For example, by adding usc, meredith, and hopkins, the following seven advertisers will be categorized as unique:
+
+USC Rossier School of Education
+USC School of Social Work
+
+Meredith Bay Sales Center
+Meredith College
+Meredith Corporation
+
+Johns Hopkins Bloomberg School of Public Health
+Johns Hopkins University
+
+
+I could also create groups and define unique names other than childrens_hospital, if advertisers with common words need to be grouped.
+Lastly, I would also try and extend the program so that it could handle advertisers with names containing the character '/'.
